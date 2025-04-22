@@ -18,34 +18,26 @@
             --bg-color-light: #f7faff; /* Slightly blueish white */
             --surface-color-light: #ffffff;
             --primary-color-light: #4a55e0; /* Muted Blue/Purple */
-            --on-primary-color-light: #ffffff; /* Text color on primary */
+            --on-primary-color-light: #ffffff;
             --text-color-light: #1f1f1f;
-            --secondary-text-color-light: #5f5f5f; /* Subtler text color */
+            --secondary-text-color-light: #5f5f5f;
             --border-color-light: #d3d3d3;
             --shadow-color-light: rgba(0, 0, 0, 0.1);
-            --ripple-color-light: rgba(74, 85, 224, 0.1); /* Ripple color based on primary */
+            --ripple-color-light: rgba(74, 85, 224, 0.1);
 
             /* Dark Theme Palette */
             --bg-color-dark: #1f1f1f; /* Dark Grey */
             --surface-color-dark: #2e2e2e;
             --primary-color-dark: #a3aaff; /* Lighter accent for dark */
-            --on-primary-color-dark: #1a1a4f; /* Text color on primary dark */
+            --on-primary-color-dark: #1a1a4f;
             --text-color-dark: #e1e1e1;
             --secondary-text-color-dark: #a1a1a1;
             --border-color-dark: #4f4f4f;
             --shadow-color-dark: rgba(0, 0, 0, 0.3);
-            --ripple-color-dark: rgba(163, 170, 255, 0.1); /* Ripple color based on primary dark */
+            --ripple-color-dark: rgba(163, 170, 255, 0.1);
 
-            /* Spacing Variables */
-            --space-small: 8px;
-            --space-medium: 16px;
-            --space-large: 24px;
-
-            /* Typography and Transitions */
             --font-family: 'Roboto', sans-serif;
             --transition-speed: 0.25s;
-
-            /* Shape Variables (Border Radius) */
             --border-radius-large: 28px; /* Key Material You shape */
             --border-radius-medium: 16px;
             --border-radius-small: 12px;
@@ -62,9 +54,8 @@
             line-height: 1.6;
         }
 
-        /* Apply dark theme variables when the body has the 'dark-theme' class */
         body.dark-theme {
-            --bg-color-light: var(--bg-color-dark); /* Use dark palette variables */
+            --bg-color-light: var(--bg-color-dark);
             --surface-color-light: var(--surface-color-dark);
             --primary-color-light: var(--primary-color-dark);
             --on-primary-color-light: var(--on-primary-color-dark);
@@ -75,18 +66,6 @@
             --ripple-color-light: var(--ripple-color-dark);
         }
 
-        /* Visually hidden for accessibility labels */
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            margin: -1px;
-            padding: 0;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
         /* --- Layout --- */
         .container {
             display: flex;
@@ -94,7 +73,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: var(--space-large); /* Use spacing variable */
+            padding: 20px;
             box-sizing: border-box;
             position: relative; /* Needed for absolute positioning of button */
         }
@@ -102,9 +81,9 @@
         /* --- Theme Toggle Button --- */
         #theme-toggle-button {
             position: absolute;
-            top: var(--space-medium); /* Use spacing variable */
-            right: var(--space-medium); /* Use spacing variable */
-            padding: 10px var(--space-medium);
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
             font-size: 0.9rem;
             font-weight: 500;
             border: none;
@@ -114,7 +93,7 @@
             color: var(--primary-color-light);
             box-shadow: 0 2px 5px var(--shadow-color-light);
             transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-            /* Basic ripple effect idea - note: this is a simplified implementation */
+            /* Basic ripple effect idea */
             background-position: center;
             background-image: radial-gradient(circle, transparent 1%, var(--surface-color-light) 1%);
             background-size: 15000%; /* Large size for effect */
@@ -125,9 +104,9 @@
         }
 
         #theme-toggle-button:active {
-            background-color: var(--ripple-color-light); /* Show ripple color on click */
+            background-color: var(--ripple-color-light);
             background-size: 100%;
-            transition: background 0s; /* Instant ripple effect */
+            transition: background 0s; /* Instant ripple */
         }
 
         body.dark-theme #theme-toggle-button {
@@ -141,10 +120,10 @@
             transition: background 0s;
         }
 
-        /* --- Greeting Area --- */
+        /* --- Greeting --- */
         .greeting-area {
             text-align: center;
-            margin-bottom: var(--space-large); /* Use spacing variable */
+            margin-bottom: 40px;
         }
 
         .greeting-area h1 {
@@ -152,7 +131,7 @@
             font-weight: 400; /* Material uses lighter weights */
             color: var(--text-color-light);
             transition: color var(--transition-speed) ease;
-            margin-bottom: var(--space-small); /* Use spacing variable */
+            margin-bottom: 5px;
         }
 
         .greeting-area .name-style {
@@ -165,12 +144,12 @@
         .search-container {
             width: 100%;
             max-width: 700px; /* Wider search */
-            padding: var(--space-large); /* Use spacing variable */
+            padding: 20px;
             background-color: var(--surface-color-light);
             border-radius: var(--border-radius-large);
             box-shadow: 0 4px 15px var(--shadow-color-light);
             transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-            margin-bottom: var(--space-large); /* Use spacing variable */
+            margin-bottom: 30px;
         }
 
         #search-form {
@@ -193,9 +172,9 @@
             border: 1px solid var(--border-color-dark);
         }
 
-        /* Select element for search engine */
+
         #search-engine {
-            padding: 12px var(--space-small) 12px var(--space-medium); /* Use spacing */
+            padding: 12px 15px;
             font-size: 0.95rem;
             font-weight: 400;
             background-color: transparent;
@@ -206,23 +185,22 @@
             cursor: pointer;
             outline: none;
             transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
-            appearance: none; /* Hide default arrow */
+            appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            /* Custom Arrow using Material Symbol (SVG Data URL) */
+            /* Custom Arrow using Material Symbol */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="${encodeURIComponent('#5f5f5f')}"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
             background-repeat: no-repeat;
-            background-position: right var(--space-small) center; /* Position arrow using spacing */
-            padding-right: var(--space-large); /* More space for the icon */
+            background-position: right 10px center;
+            padding-right: 40px; /* More space for the icon */
         }
 
         body.dark-theme #search-engine {
              color: var(--secondary-text-color-dark);
-             /* Update SVG fill color for dark theme */
              background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="${encodeURIComponent('#a1a1a1')}"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
         }
 
-        /* Options within the select dropdown */
+
         #search-engine option {
             background-color: var(--surface-color-light); /* Dropdown option background */
             color: var(--text-color-light);
@@ -233,10 +211,9 @@
             color: var(--text-color-dark);
         }
 
-        /* Search input field */
         #search-input {
-            flex-grow: 1; /* Takes up remaining space */
-            padding: 14px var(--space-medium); /* Use spacing */
+            flex-grow: 1;
+            padding: 14px 18px; /* More padding */
             font-size: 1rem;
             font-weight: 400;
             border: none;
@@ -255,10 +232,9 @@
             color: var(--secondary-text-color-dark);
         }
 
-        /* Search button */
         #search-form button {
-            padding: 10px var(--space-medium);
-            margin: var(--space-small); /* Add margin for visual separation */
+            padding: 10px 15px;
+            margin: 4px; /* Add margin for visual separation */
             border: none;
             background-color: var(--primary-color-light);
             color: var(--on-primary-color-light);
@@ -275,8 +251,9 @@
             line-height: 1; /* Ensure icon aligns well */
         }
 
+
         #search-form button:hover {
-             filter: brightness(1.1); /* Slightly brighten on hover */
+             filter: brightness(1.1);
         }
 
         body.dark-theme #search-form button {
@@ -287,19 +264,16 @@
              filter: brightness(1.15);
         }
 
+
         /* --- Responsiveness --- */
         @media (max-width: 768px) {
-            .container {
-                padding: var(--space-medium); /* Adjust padding */
-            }
-
             .greeting-area h1 {
                 font-size: 2.2rem;
             }
 
             .search-container {
-                max-width: 95%; /* Allow search container to be a bit wider */
-                padding: var(--space-medium); /* Adjust padding */
+                max-width: 90%;
+                padding: 15px;
                 border-radius: var(--border-radius-medium); /* Smaller radius on mobile */
             }
 
@@ -309,81 +283,82 @@
             }
 
             #search-engine {
-                padding: 10px var(--space-small) 10px var(--space-medium);
-                padding-right: var(--space-large); /* Adjust icon space */
+                padding: 10px 10px 10px 15px;
+                padding-right: 35px; /* Adjust icon space */
                 font-size: 0.9rem;
             }
 
             #search-input {
-                padding: 12px var(--space-medium);
+                padding: 12px 15px;
                 font-size: 0.95rem;
             }
 
              #search-form button {
-                padding: var(--space-small) var(--space-medium);
-                margin: var(--space-small);
+                padding: 8px 12px;
+                margin: 3px;
              }
              #search-form button .material-symbols-outlined {
                  font-size: 22px;
              }
 
             #theme-toggle-button {
-                top: var(--space-small);
-                right: var(--space-small);
-                padding: var(--space-small) var(--space-medium);
+                top: 15px;
+                right: 15px;
+                padding: 8px 15px;
                 font-size: 0.8rem;
             }
         }
 
         @media (max-width: 480px) {
-             .container {
-                padding: var(--space-medium); /* Adjust padding */
-            }
-            .greeting-area {
-                margin-bottom: var(--space-medium);
-            }
-
             .greeting-area h1 {
                 font-size: 1.8rem;
             }
             .greeting-area .name-style {
                 display: block; /* Stack name if too long */
-                margin-top: var(--space-small);
-            }
-
-            .search-container {
-                padding: var(--space-medium);
-                border-radius: var(--border-radius-medium);
+                margin-top: 5px;
             }
 
             .search-wrapper {
-                 border-radius: var(--border-radius-medium);
+               /* Option: Stack on very small screens if needed */
+               /* flex-direction: column;
+               background-color: transparent;
+               border: none;
+               align-items: stretch; */
+               border-radius: var(--border-radius-medium);
             }
 
-            #search-engine {
-                padding: 10px var(--space-small) 10px var(--space-medium);
-                padding-right: var(--space-large);
-                 font-size: 0.9rem;
+            /* If stacking: uncomment below and adjust */
+            /*
+            #search-engine, #search-input, #search-form button {
+                width: 100%;
+                border-radius: var(--border-radius-medium);
+                margin: 0 0 10px 0;
+                box-sizing: border-box;
+                border: 1px solid var(--border-color-light);
+                background-color: var(--surface-color-light);
             }
-
-             #search-input {
-                padding: 12px var(--space-small);
-                 font-size: 0.95rem;
+            #search-engine { border-right: 1px solid var(--border-color-light); }
+            #search-form button { background-color: var(--primary-color-light); color: var(--on-primary-color-light); }
+            body.dark-theme #search-engine,
+            body.dark-theme #search-input {
+                 background-color: var(--surface-color-dark);
+                 border: 1px solid var(--border-color-dark);
             }
-
+             body.dark-theme #search-form button { background-color: var(--primary-color-dark); color: var(--on-primary-color-dark); }
+            */
 
             #search-form button {
-                 padding: var(--space-small); /* Smaller padding on smallest screens */
-                 margin: var(--space-small);
+                 padding: 10px;
+                 margin: 2px;
             }
              #search-form button .material-symbols-outlined {
                  font-size: 20px;
              }
 
             #theme-toggle-button {
-                top: var(--space-small);
-                right: var(--space-small);
-                padding: var(--space-small) var(--space-small);
+                top: 10px;
+                right: 10px;
+                padding: 6px 12px;
                 font-size: 0.75rem;
             }
         }
@@ -393,9 +368,7 @@
 <body>
 
     <div class="container">
-        <button id="theme-toggle-button">Toggle Theme</button>
-
-        <header class="greeting-area">
+        <button id="theme-toggle-button">Toggle Theme</button> <header class="greeting-area">
             <h1>
                 <span id="greeting-text"></span>, <span class="name-style">Srinivasan</span>
             </h1>
@@ -404,16 +377,12 @@
         <main class="search-container">
             <form id="search-form" action="#" method="get" role="search">
                 <div class="search-wrapper">
-                    <label for="search-engine" class="visually-hidden">Select Search Engine</label>
                     <select id="search-engine" name="search-engine" aria-label="Select Search Engine">
                         <option value="google" selected>Google</option>
                         <option value="duckduckgo">DuckDuckGo</option>
                         <option value="bing">Bing</option>
                     </select>
-
-                    <label for="search-input" class="visually-hidden">Search Query</label>
                     <input type="text" id="search-input" name="q" placeholder="Search the web..." required aria-label="Search Input">
-
                     <button type="submit" aria-label="Search">
                         <span class="material-symbols-outlined">search</span>
                     </button>
@@ -423,9 +392,7 @@
     </div>
 
     <script>
-        // Wait for the DOM to be fully loaded before running the script
         document.addEventListener('DOMContentLoaded', () => {
-            // Get references to DOM elements
             const greetingText = document.getElementById('greeting-text');
             const themeToggleButton = document.getElementById('theme-toggle-button');
             const searchForm = document.getElementById('search-form');
@@ -433,13 +400,14 @@
             const searchInput = document.getElementById('search-input');
             const body = document.body;
 
-            // --- Set Dynamic Greeting based on time ---
+            // --- Set Dynamic Greeting ---
             function setGreeting() {
                 const now = new Date();
-                const hour = now.getHours(); // Get hour (0-23)
+                const hour = now.getHours(); // 0-23
                 let greeting;
 
-                // Determine greeting based on the hour (using 24-hour format)
+                // Adjusting for IST potentially being ahead
+                // 6:48 PM is hour 18
                 if (hour >= 5 && hour < 12) { // 5:00 AM to 11:59 AM
                     greeting = "Good morning";
                 } else if (hour >= 12 && hour < 17) { // 12:00 PM to 4:59 PM
@@ -447,44 +415,81 @@
                 } else { // 5:00 PM to 4:59 AM
                     greeting = "Good evening";
                 }
-                greetingText.textContent = greeting; // Update the greeting text
+                greetingText.textContent = greeting;
             }
 
             // --- Theme Handling ---
-
-            // Function to apply either dark or light theme class and button text
             function applyTheme(isDark) {
                 if (isDark) {
                     body.classList.add('dark-theme');
-                    themeToggleButton.textContent = "Light Theme"; // Button text shows option to switch TO light
+                    themeToggleButton.textContent = "Light Theme"; // Show option to switch TO light
                 } else {
                     body.classList.remove('dark-theme');
-                    themeToggleButton.textContent = "Dark Theme"; // Button text shows option to switch TO dark
+                    themeToggleButton.textContent = "Dark Theme"; // Show option to switch TO dark
                 }
             }
 
-            // Function to handle the theme toggle button click
+            // Function to handle the toggle click
             function handleThemeToggle() {
-                const currentlyDark = body.classList.contains('dark-theme'); // Check current theme
-                const newThemeIsDark = !currentlyDark; // Determine the new theme state
-                applyTheme(newThemeIsDark); // Apply the new theme
-                // Store the user's preference in local storage
+                const currentlyDark = body.classList.contains('dark-theme');
+                const newThemeIsDark = !currentlyDark;
+                applyTheme(newThemeIsDark);
+                // Store preference
                 localStorage.setItem('themePreference', newThemeIsDark ? 'dark' : 'light');
             }
 
-            // --- Initialize Theme on Page Load ---
-            const savedTheme = localStorage.getItem('themePreference'); // Check for saved preference
-            // Check if the user's system prefers dark mode
+            // --- Initialize Theme ---
+            const savedTheme = localStorage.getItem('themePreference');
             const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             let initialThemeIsDark;
 
-            // Determine the initial theme: saved preference > system preference > default (light)
             if (savedTheme === 'dark') {
                 initialThemeIsDark = true;
             } else if (savedTheme === 'light') {
                 initialThemeIsDark = false;
             } else {
-                // Default to system preference if no saved theme is found
+                // Default to system preference if no saved theme
                 initialThemeIsDark = systemPrefersDark;
             }
-            // Apply the determined ini
+            // Apply the initial theme AND set the correct button text
+            applyTheme(initialThemeIsDark);
+
+            // Add event listener AFTER initial setup
+            themeToggleButton.addEventListener('click', handleThemeToggle);
+
+
+            // --- Search Functionality ---
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const query = searchInput.value.trim();
+                if (!query) return; // Don't search if empty
+
+                const selectedEngine = searchEngineSelect.value;
+                let searchUrl;
+
+                switch (selectedEngine) {
+                    case 'duckduckgo':
+                        searchUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+                        break;
+                    case 'bing':
+                        searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+                        break;
+                    case 'google':
+                    default:
+                        searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                        break;
+                }
+
+                // Navigate in the same tab
+                window.location.href = searchUrl;
+            });
+
+            // --- Initial Setup Calls ---
+            setGreeting(); // Call greeting function on load
+
+        });
+    </script>
+
+</body>
+</html>
