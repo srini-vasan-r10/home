@@ -196,10 +196,9 @@
         }
 
         body.dark-theme #search-engine {
-             color: var(--secondary-text-color-dark);
-             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="${encodeURIComponent('#a1a1a1')}"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>');
-        }
-
+    color: var(--text-color-dark); /* Ensures the text is white (or near white) in dark mode */
+    background-color: var(--surface-color-dark); /* Optional: Matches dark surface */
+}
 
         #search-engine option {
             background-color: var(--surface-color-light); /* Dropdown option background */
